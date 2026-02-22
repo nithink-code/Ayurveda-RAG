@@ -368,7 +368,7 @@ def tab_ayurveda():
             with st.spinner("Updating KB..."):
                 try:
                     ev_id = trigger_seed_kb()
-                    wait_for_run_output(ev_id, timeout_s=10)
+                    wait_for_run_output(ev_id, timeout_s=20)
                     st.success("✅ Knowledge base updated!")
                 except Exception as e:
                     st.error(f"Update failed: {e}")
