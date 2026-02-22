@@ -28,7 +28,7 @@ def read_root():
 inngest_client = inngest.Inngest(
     app_id="study-rag",
     logger=logging.getLogger("uvicorn"),
-    is_production=not bool(os.getenv("INNGEST_DEV")),
+    is_production=os.getenv("INNGEST_DEV", "false").lower() != "true",
     signing_key=os.getenv("INNGEST_SIGNING_KEY"),
     event_key=os.getenv("INNGEST_EVENT_KEY"),
 )

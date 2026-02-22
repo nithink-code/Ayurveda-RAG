@@ -58,7 +58,7 @@ local_css("style.css")
 def get_inngest_client() -> inngest.Inngest:
     return inngest.Inngest(
         app_id="study-rag",
-        is_production=not bool(os.getenv("INNGEST_DEV")),
+        is_production=os.getenv("INNGEST_DEV", "false").lower() != "true",
         signing_key=os.getenv("INNGEST_SIGNING_KEY"),
         event_key=os.getenv("INNGEST_EVENT_KEY"),
     )
@@ -69,8 +69,8 @@ async def _send_event(name: str, data: dict) -> str:
     return result[0]
 
 def _inngest_api_base() -> str:
-    # Use local dev server if in dev mode
-    if os.getenv("INNGEST_DEV"):
+    # Use local dev server only if INNGEST_DEV is explicitly set to "true"
+    if os.getenv("INNGEST_DEV", "false").lower() == "true":
         return "http://localhost:8288/v1"
     return os.getenv("INNGEST_API_BASE", "https://api.inngest.com/v1")
 
