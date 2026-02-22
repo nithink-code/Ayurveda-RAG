@@ -1,0 +1,686 @@
+/* ═══════════════════════════════════════════════════════════
+   AyurvedaRAG — Premium Ayurvedic UI Theme
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ── Root Variables ── */
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #111827;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(212, 168, 90, 0.4);
+
+  --gold: #d4a85a;
+  --gold-light: #f0c878;
+  --gold-dark: #a07832;
+  --green-ayur: #2d6a4f;
+  --green-light: #52b788;
+
+  --text-primary: #f0f0f0;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  --vata-color: #3b82f6;
+  --pitta-color: #ef4444;
+  --kapha-color: #10b981;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-gold: 0 4px 24px rgba(212, 168, 90, 0.15);
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-sm: 8px;
+}
+
+/* ── Global ── */
+html,
+body,
+[data-testid="stAppViewContainer"] {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary) !important;
+  color: var(--text-primary);
+}
+
+[data-testid="stAppViewContainer"] {
+  background: radial-gradient(ellipse at top left, #0d1f4e22 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, #2d6a4f18 0%, transparent 50%),
+    var(--bg-primary) !important;
+}
+
+[data-testid="stHeader"] {
+  background: transparent !important;
+}
+
+/* ── Hide Default Streamlit Elements ── */
+[data-testid="stStatusWidget"],
+[data-testid="stAppDeployButton"],
+#MainMenu {
+  display: none !important;
+}
+
+/* ── Sidebar ── */
+[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #0d1117 0%, #0a0e1a 100%) !important;
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-brand {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.sidebar-logo {
+  font-size: 48px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 12px #2d6a4f88);
+}
+
+.sidebar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+.sidebar-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ── Top Nav ── */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0 8px 0;
+  margin-bottom: 4px;
+}
+
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold), var(--green-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+/* ── Streamlit Buttons ── */
+.stButton>button {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  border-radius: var(--radius-sm) !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid var(--border) !important;
+  font-size: 13px !important;
+}
+
+.stButton>button[kind="primary"] {
+  background: linear-gradient(135deg, #2d6a4f, #1b4332) !important;
+  color: #ffffff !important;
+  border-color: var(--green-light) !important;
+  box-shadow: 0 4px 16px rgba(45, 106, 79, 0.35) !important;
+}
+
+.stButton>button[kind="primary"]:hover {
+  background: linear-gradient(135deg, var(--green-light), var(--green-ayur)) !important;
+  box-shadow: 0 6px 24px rgba(82, 183, 136, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+.stButton>button[kind="secondary"] {
+  background: var(--bg-card) !important;
+  color: var(--text-secondary) !important;
+}
+
+.stButton>button[kind="secondary"]:hover {
+  background: var(--bg-card-hover) !important;
+  border-color: var(--border-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ── Inputs & Selects ── */
+.stSelectbox>div>div,
+.stTextInput>div>div>input,
+.stNumberInput>div>div>input,
+.stTextArea>div>div>textarea {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.stSelectbox>div>div:focus-within,
+.stTextInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus {
+  border-color: var(--green-light) !important;
+  box-shadow: 0 0 0 2px rgba(82, 183, 136, 0.2) !important;
+}
+
+label {
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+}
+
+/* ── Sliders ── */
+.stSlider>div>div>div {
+  background: linear-gradient(90deg, var(--green-ayur), var(--green-light)) !important;
+}
+
+/* ── Expanders ── */
+.streamlit-expanderHeader {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+
+.streamlit-expanderContent {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid var(--border) !important;
+  border-top: none !important;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+}
+
+/* ── Hero Sections ── */
+.ayur-hero {
+  background: linear-gradient(135deg, #0d2818, #1a4a2e, #0d1f14);
+  border: 1px solid rgba(45, 106, 79, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  margin-bottom: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ayur-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(45, 106, 79, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse at 70% 50%, rgba(212, 168, 90, 0.08) 0%, transparent 70%);
+}
+
+.ayur-hero-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 16px var(--green-light));
+  position: relative;
+  z-index: 1;
+}
+
+.ayur-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ayur-hero-sub {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Glass Cards ── */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 168, 90, 0.2);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ── Dosha Badge ── */
+.dosha-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.dosha-label {
+  color: var(--text-secondary);
+}
+
+.dosha-value {
+  font-weight: 600;
+}
+
+/* ── Dosha Reference Card ── */
+.dosha-ref {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dosha-item {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid;
+}
+
+.dosha-item.vata {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: var(--vata-color);
+}
+
+.dosha-item.pitta {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: var(--pitta-color);
+}
+
+.dosha-item.kapha {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: var(--kapha-color);
+}
+
+.dosha-name {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.dosha-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.dosha-conditions {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 3px;
+}
+
+/* ── Condition Chips ── */
+.condition-chip {
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.condition-chip:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Plan Display ── */
+.plan-header {
+  margin-bottom: 16px;
+}
+
+.plan-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(45, 106, 79, 0.3), rgba(45, 106, 79, 0.1));
+  border: 1px solid rgba(82, 183, 136, 0.4);
+  color: var(--green-light);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.plan-condition {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 4px 0 0 0;
+}
+
+/* ── Disclaimer Card ── */
+.disclaimer-card {
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Progress Dashboard ── */
+.progress-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.progress-icon {
+  font-size: 32px;
+}
+
+.progress-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.progress-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ── Metric Cards ── */
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+  border-color: rgba(212, 168, 90, 0.3);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.metric-icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.metric-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green-light);
+}
+
+/* ── Empty State ── */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 340px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Chat ── */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.user-message {
+  background: linear-gradient(135deg, rgba(45, 106, 79, 0.25), rgba(45, 106, 79, 0.15));
+  border: 1px solid rgba(82, 183, 136, 0.25);
+  border-radius: 12px 12px 4px 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  align-self: flex-end;
+  max-width: 85%;
+  margin-left: auto;
+}
+
+.assistant-message {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px 12px 12px 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  max-width: 90%;
+  line-height: 1.65;
+}
+
+/* ── Status / Alerts ── */
+.stAlert {
+  border-radius: var(--radius-sm) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--border) !important;
+}
+
+[data-testid="stStatusWidget"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* ── Download Buttons ── */
+.stDownloadButton>button {
+  background: linear-gradient(135deg, #1b4332, #2d6a4f) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(82, 183, 136, 0.4) !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius) !important;
+  height: 48px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(27, 67, 50, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.stDownloadButton>button:hover {
+  background: linear-gradient(135deg, #2d6a4f, #3b7d5e) !important;
+  box-shadow: 0 8px 25px rgba(27, 67, 50, 0.3) !important;
+  transform: translateY(-2px) !important;
+  border-color: var(--green-light) !important;
+  color: #ffffff !important;
+}
+
+
+/* ── Animated Border (kept from original) ── */
+@keyframes borderPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(82, 183, 136, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 4px rgba(82, 183, 136, 0.1);
+  }
+}
+
+.animated-border-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  animation: borderPulse 4s ease-in-out infinite;
+  margin-bottom: 16px;
+}
+
+/* ── Scrollbars ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Spinner / Progress ── */
+.stSpinner>div {
+  border-color: var(--green-light) transparent transparent transparent !important;
+}
+
+/* ── Markdown content inside glass cards ── */
+.glass-card h1,
+.glass-card h2,
+.glass-card h3 {
+  color: var(--gold-light);
+  font-family: 'Playfair Display', serif;
+}
+
+.glass-card strong {
+  color: var(--text-primary);
+}
+
+.glass-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.glass-card ul,
+.glass-card ol {
+  color: var(--text-secondary);
+}
+
+/* ── Radio Buttons ── */
+.stRadio>div {
+  background: transparent !important;
+  gap: 8px;
+}
+
+.stRadio>div>label {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 12px !important;
+}
+
+.stRadio>div>label:has(input:checked) {
+  background: rgba(82, 183, 136, 0.15);
+  border-color: var(--green-light);
+  color: var(--green-light) !important;
+}
+
+/* ── Success Toast ── */
+.success-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #1b4332, #2d6a4f);
+  border: 1px solid var(--green-light);
+  border-radius: 100px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  z-index: 9999;
+  box-shadow: var(--shadow-md);
+  animation: slideUp 0.4s ease;
+}
+
+.success-icon {
+  color: var(--green-light);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── Number Input ── */
+.stNumberInput>div>div {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 768px) {
+  .ayur-hero {
+    padding: 24px 16px;
+  }
+
+  .ayur-hero-title {
+    font-size: 20px;
+  }
+
+  .nav-brand {
+    font-size: 20px;
+  }
+}
