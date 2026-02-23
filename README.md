@@ -41,6 +41,9 @@ AyurvedaRAG is a state-of-the-art **Retrieval-Augmented Generation (RAG)** syste
 - **AI/LLM:** [LlamaIndex](https://www.llamaindex.ai/) & [OpenAI](https://openai.com/) — Advanced RAG orchestration and natural language generation.
 - **Reporting:** [fpdf2](https://py-pdf.github.io/fpdf2/) — For server-side, premium PDF generation.
 
+## Live Link
+https://ayurveda-rag-app.streamlit.app
+
 ---
 
 ## 🛡️ Disclaimer
@@ -51,3 +54,4 @@ AyurvedaRAG is a state-of-the-art **Retrieval-Augmented Generation (RAG)** syste
 <p align="center">
   Built with ❤️ for a Healthier World.
 </p>
+
